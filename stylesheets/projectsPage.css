@@ -1,0 +1,47 @@
+#projectsPage{
+    display: grid;
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: fit-content;
+    grid-template-columns: 1fr, 1fr;
+    grid-template-rows: 1fr, 1fr;
+    grid-template-areas: 
+    "blackjack roulette"
+    "bitcoinExchange css_lekeplass"
+    ;
+    color: #ccc;
+    transition: opacity 1000ms;
+    gap: 30px;
+}
+#blackjackProject{
+    grid-area: blackjack;
+}
+#rouletteProject{
+    grid-area: roulette;
+}
+#bitcoinExchangeProject{
+    grid-area: bitcoinExchange;
+}
+#css_lekeplassProject{
+    grid-area: css_lekeplass;
+}
+.projectTitle img{
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.projectTitle img:hover{
+    background-color: #333;
+}
+.projectTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

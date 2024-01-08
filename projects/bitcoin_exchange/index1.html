@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance</title>
+    <link rel="stylesheet" href="style1.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/d05c19ccecf7003d248c60ffd6b5e8f7?family=Binance+PLEX" rel="stylesheet">
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="leftSideNavbar">
+            <img src="logos/logo.png" alt="Finance logo" class="header-logo">
+            <div id="links">
+                <a href="">
+                    <p>Buy Crypto</p>
+                </a>
+                <a href="">
+                    <p>Markets</p>
+                </a>
+                <a href="">
+                    <p>Trade</p>
+                </a>
+                <a href="">
+                    <p>Futures</p>
+                </a>
+                <a href="">
+                    <p>Earn</p>
+                </a>
+                <a href="">
+                    <p>Square</p>
+                </a>
+                <a href="">
+                    <p>More</p>
+                </a>
+            </div>
+        </div>
+        <div id="rightSideNavbar">
+            <img src="logos/search_icon.png" alt="search icon" id="searchIcon">
+            <a href="">
+                <p>Log In</p>
+            </a>
+            <a href="">
+                <p>Register</p>
+            </a>
+        </div>
+
+
+    </div>
+    <div class="wrapper">
+        <div id="buySell">
+            <div class="placeOrder">
+                <h1>Buy BTC</h1>
+            </div>
+            <div class="coinWrapper">
+                <div class="buySellWrapper">
+                    <div class="buyButton">
+                        <h1>Buy</h1>
+                    </div>
+                    <div class="sellButton">
+                        <h1>Sell</h1>
+                    </div>
+                </div>
+                <div class="marketSelection">
+                    <select id="selectMarket">
+                        <option value="Market Order">Market</option>
+                        <option value="Limit Order">Limit</option>
+                    </select>
+                </div>
+                <div class="limitPrice inputWrapper">
+                    <div class="limitPriceInput"><input type="number" min="0" max="999999" placeholder="Limit Price">
+                    </div>
+                    <div class="currencySelection">
+                        <select class="selectCurrency">
+                            <option value="USDT">USDT</option>
+                            <option value="BTC">BTC</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="orderTotalAmount inputWrapper">
+                    <div class="totalAmount"><input type="number" min="0" max="999999" placeholder="Amount"></div>
+                    <div class="currencySelection">
+                        <select class="selectCurrency">
+                            <option value="USDT">USDT</option>
+                            <option value="BTC">BTC</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="orderInfo">
+                    <p>Available:</p>
+                    <div>
+                        <p id="avblUSDT">10000</p>
+                        <p>USDT</p>
+                    </div>
+                    <div>
+                        <p id="avblBTC">0</p>
+                        <p>BTC
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="listGrid">
+            <div id="sort">
+                <div id="sortByCategory">
+                    <h1>Order type</h1>
+                </div>
+                <div id="sortByPrice">
+                    <h1>Price</h1>
+                </div>
+                <div id="sortByAmount">
+                    <h1>Amount</h1>
+                </div>
+            </div>
+            <div id="list"></div>
+        </div>
+        <div id="list2">
+            <div id="bitcoinLi">
+                <div class="coinNameContainer"><img src="coins/Bitcoin.png" alt="">
+                    <h1>BTC</h1>
+                    <h1 class="coinName">Bitcoin</h1>
+                </div>
+                <h2>44000</h2>
+                <h2>+0.2%</h2>
+            </div>
+            <div id="ethereumLi">
+                <div class="coinNameContainer"><img src="coins/Ethereum.png" alt="">
+                    <h1>ETH</h1>
+                    <h1 class="coinName">Ethereum</h1>
+                </div>
+                <h2>2355</h2>
+                <h2>+0.2%</h2>
+            </div>
+            <div id="BNBLi">
+                <div class="coinNameContainer"><img src="coins/BNB.png" alt="">
+                    <h1>BNB</h1>
+                    <h1 class="coinName">Binance Coin</h1>
+                </div>
+                <h2>239</h2>
+                <h2>+0.2%</h2>
+            </div>
+            <div id="rippleLi">
+                <div class="coinNameContainer"><img src="coins/Ripple.png" alt="">
+                    <h1>XRP</h1>
+                    <h1 class="coinName">Ripple</h1>
+                </div>
+                <h2>0.6751</h2>
+                <h2>+0.2%</h2>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div>
+            <h3>About Us</h3>
+            <ul>
+                <li><a href="">About</a></li>
+                <li><a href="">Business Contacts</a></li>
+                <li><a href="">Careers</a></li>
+                <li><a href="">Announcements</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">Press</a></li>
+                <li><a href="">Legal</a></li>
+                <li><a href="">Terms</a></li>
+                <li><a href="">Privacy</a></li>
+                <li><a href="">Building Trust</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Community</a></li>
+                <li><a href="">Sitemap</a></li>
+                <li><a href="">Risk Warning</a></li>
+                <li><a href="">Notices</a></li>
+                <li><a href="">Downloads</a></li>
+                <li><a href="">Desktop Application</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Products</h3>
+            <ul>
+                <li><a href="">Exchange</a></li>
+                <li><a href="">Buy Crypto</a></li>
+                <li><a href="">Leveraged Tokens</a></li>
+                <li><a href="">TradingView</a></li>
+                <li><a href="">Pay</a></li>
+                <li><a href="">Academy</a></li>
+                <li><a href="">Live</a></li>
+                <li><a href="">Tax</a></li>
+                <li><a href="">Gift Card</a></li>
+                <li><a href="">Launchpad & Launchpool</a></li>
+                <li><a href="">Auto-Invest</a></li>
+                <li><a href="">ETH Staking</a></li>
+                <li><a href="">Defi Staking</a></li>
+                <li><a href="">NFT</a></li>
+                <li><a href="">BNB</a></li>
+                <li><a href="">BABT</a></li>
+                <li><a href="">Research</a></li>
+                <li><a href="">Charity</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Buisness</h3>
+            <ul>
+                <li><a href="">P2P Merchant Application</a></li>
+                <li><a href="">P2Pro Merchant Application</a></li>
+                <li><a href="">Listing Application</a></li>
+                <li><a href="">Institutional & VIP Services</a></li>
+                <li><a href="">Labs</a></li>
+            </ul>
+            <h3>Learn</h3>
+            <ul>
+                <li><a href="">Learn & Earn</a></li>
+                <li><a href="">Browse Crypto Prices</a></li>
+                <li><a href="">Bitcoin Price</a></li>
+                <li><a href="">Ethereum Price</a></li>
+                <li><a href="">Buy Bitcoin</a></li>
+                <li><a href="">Buy BNB</a></li>
+                <li><a href="">Buy Ripple</a></li>
+                <li><a href="">Buy Dogecoin</a></li>
+                <li><a href="">Buy Ethereum</a></li>
+                <li><a href="">Buy Tradable Altcoins</a></li>
+            </ul>        
+        </div>
+        <div>
+            <h3>Service</h3>
+            <ul>
+                <li><a href="">Affiliate</a></li>
+                <li><a href="">Referral</a></li>
+                <li><a href="">OTC Trading</a></li>
+                <li><a href="">Historical Market Data</a></li>
+                <li><a href="">Proof of Reserves</a></li>
+            </ul>
+            <h3>Support</h3>
+            <ul>
+                <li><a href="">24/7 Chat Support</a></li>
+                <li><a href="">Support Center</a></li>
+                <li><a href="">Request a Feature</a></li>
+                <li><a href="">Fees</a></li>
+                <li><a href="">APIs</a></li>
+                <li><a href="">Binance Verify</a></li>
+                <li><a href="">Trading Rules</a></li>
+                <li><a href="">Binance Airdrop Portal</a></li>
+                <li><a href="">Law Enforcement Requests</a></li>
+                <li><a href="">Binance Legal (Court Orders)</a></li>
+            </ul>
+                    
+        </div>
+    </div>
+    
+</body>
+<script src="script.js"></script>
+
+</html>

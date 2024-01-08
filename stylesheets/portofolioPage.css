@@ -1,0 +1,68 @@
+/* PORTOFOLIO PAGE */
+#portofolioPage{
+    position: absolute;
+    opacity: 0;
+    width: 60%;
+    left: 50%;
+    transform: translate(-50%,-300%);
+    color: #ccc;
+    transition: opacity 1000ms;
+}
+#introduction *{
+    margin: 0;
+}
+#portofolioPage p{
+    font-size: 1.4em;
+    line-height: 1.7em;
+}
+#introduction {
+    margin: 30vh auto 40vh auto;
+}
+#introduction h1{
+    font-weight: 300;
+}
+
+#myName {
+    display: flex !important;
+    color: #368BD3;
+    font-size: 1.7em;
+}
+#myName h1{
+    position: relative;
+    opacity: 0;
+    transition: opacity 500ms;
+    font-weight: 700;
+}
+#portofolioContent h1{
+    border-top: 2px solid #0078D4;
+    padding-top: 30px;
+}
+#portofolioContent>div{
+    margin-top: 40vh;
+}
+#languages{
+    display: flex !important;
+    margin-top: 60px;
+}
+#languages>div{
+    width: 50%;
+}
+#vikenLogo{
+    height: 150px;
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+    border: 1px solid #555;
+    padding: 20px;
+    border-radius: 20px;
+}
+#languages>div:nth-child(2){
+    display: flex !important;
+}
+
+#languages>div:nth-child(2) *{
+    margin-left: 1em;
+}
+#languages>div:nth-child(2) h2{
+    margin-top: 50px;
+}
