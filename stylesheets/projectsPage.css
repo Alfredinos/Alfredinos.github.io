@@ -5,7 +5,6 @@
     left: 50%;
     top: 20%;
     transform: translate(-50%, -300);
-    width: 60%;
     height: fit-content;
     
     color: #ccc;
@@ -20,6 +19,8 @@
         "blackjack roulette"
         "bitcoinExchange css_lekeplass"
         ;
+        
+        width: 60%;
     }
 }
 @media (orientation: portrait) {
@@ -32,7 +33,9 @@
         "bitcoinExchange"
         "css_lekeplass"
         ;
+        width: 90%;
     }
+
 }
 #blackjackProject{
     grid-area: blackjack;

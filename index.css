@@ -33,6 +33,9 @@ p{
     #body{    
         height: 92vh;
     }
+    #navbarMobile{
+        display: none;
+    }
 }
 @media (orientation: portrait) {
     #navbar{
@@ -47,7 +50,38 @@ p{
     #body{    
         height: 100vh;
     }
+    #navbarMobile{
+        display: flex;
+    }
 }
+
+#navbarMobile{
+    height: 50px;
+    background-color: #181818;
+    border-bottom: 1px solid #363636;
+    justify-content: space-between;
+}
+#navbarMobile img{
+    position: relative;
+    height: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 20px;
+}
+#navbarMobile h1{
+    margin: 0 20px 0 0;
+    position: relative;
+    top: 50%;
+    height: fit-content;
+    transform: translateY(-50%);
+    color: #ccc;
+    font-size: 1em;
+    padding: 5px 20px 5px 20px;
+    border: 1px solid #363636;
+    border-radius: 5px;
+    background-color: #222;
+}
+
 
 #logo{
     height: 20px;

@@ -8,6 +8,9 @@
         top: 100%;
         transform: translateY(-100%);
     }
+    #portofolioPage{
+        width: 60%;
+    }
 }
 
 @media (orientation: portrait) {
@@ -17,13 +20,24 @@
     #languages>div:nth-child(2) img{
         position: static;
     }
+    #portofolioPage{
+        width: 90%;
+    }
+    #myName h1{
+        font-size: xx-large;
+    }
+    h1{
+        font-size: 1.4em;
+    }
+    #vikenLogo{
+        display: none;
+    }
 }
 
 /* PORTOFOLIO PAGE */
 #portofolioPage{
     position: absolute;
     opacity: 0;
-    width: 60%;
     left: 50%;
     transform: translate(-50%,-300%);
     color: #ccc;

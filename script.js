@@ -7,7 +7,7 @@ let myNameh1Els = document.querySelectorAll("#myName>h1");
 let portofolioPage = document.querySelector("#portofolioPage");
 let myPortofolioFile = document.querySelector("#myPortofolioFile");
 let sourcesEl = document.querySelector("#sources");
-let searchEl = document.querySelector("#search h1");
+let searchEl = document.querySelectorAll("#search h1, #navbarMobileTitle");
 let cvPageEl = document.querySelector("#cvPage");
 let cvFileEl = document.querySelector("#cvFile");
 let projectsFileEl = document.querySelector("#projectsFile");
@@ -17,6 +17,13 @@ let folderEls = document.querySelectorAll(".folder");
 let subFolderEls = document.querySelectorAll(".subFolder");
 
 let title = document.querySelector("title");
+
+let navbarMobileEl = document.querySelector("#navbarMobile img");
+let pageEl = document.querySelector("#pages");
+
+let mobileSourcesToggle = false;
+
+navbarMobileEl.addEventListener("click", toggleSources);
 
 folderToggle = []
 subFolderToggle = []
@@ -83,6 +90,18 @@ pageOpen = {
 }
 
 
+function toggleSources(){
+    
+    if(!mobileSourcesToggle){
+        sourcesEl.style.display = "none";
+        pageEl.style.width = "100vw";
+    } else {
+        sourcesEl.style.display = "block";
+        pageEl.style.width = "82vw";
+    }
+    mobileSourcesToggle = !mobileSourcesToggle
+}
+
 function togglePage(page){
     toggleOffAllPages()
     if(page == "my_portofolio.md" && !pageOpen.portofolio){
@@ -107,17 +126,21 @@ function togglePage(page){
         pageOpen.projects = true;
         projectsFileEl.style.backgroundColor = "#444";
     }
-    searchEl.innerText = page;
-    
+    for (let i = 0; i<searchEl.length; i++){
+        searchEl[i].innerText = page;
+    }
+    if(window.innerHeight > window.innerWidth){
+        toggleSources()
+    }
     sourcesEl.style.backgroundColor = "#181818";
 }
 
 function toggleOffAllPages(){
-    portofolioPage.style.transform = "translate(-50%,-300vh)";
+    portofolioPage.style.transform = "translate(-5000%,-30000vh)";
     portofolioPage.style.opacity = "0";
     cvPageEl.style.transform = "translate(-50%, -300vh)"
     cvPageEl.style.opacity = "0";
-    projectsPageEl.style.transform = "translate(-50%, -300vh)";
+    projectsPageEl.style.transform = "translate(-5000%, -30000vh)";
     projectsPageEl.style.opacity = "0";
     myPortofolioFile.style.backgroundColor = "";
     cvFile.style.backgroundColor = "";
