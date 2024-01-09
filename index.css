@@ -17,14 +17,38 @@ p{
 
 /* NAVBAR */
 
-#navbar{
-    width: 100vw;
-    height: 4vh;
-    background-color: #181818;
-    border-bottom: 2px solid #2b2b2b;
-    display: flex;
-    justify-content: space-between;
+@media (orientation: landscape) {
+    #navbar{
+        width: 100vw;
+        height: 46px;
+        background-color: #181818;
+        border-bottom: 2px solid #2b2b2b;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    #footer{
+        display: flex;
+    }
+    #body{    
+        height: 92vh;
+    }
 }
+@media (orientation: portrait) {
+    #navbar{
+        display: none;
+    }
+    #footer{
+        display: none;
+    }
+    #functions{
+        display: none;
+    }
+    #body{    
+        height: 100vh;
+    }
+}
+
 #logo{
     height: 20px;
     aspect-ratio: 1/1;
@@ -75,7 +99,7 @@ p{
     text-align: center;
     margin: 0;
     color: #ccc;
-    font-size: 1.2em;
+    font-size: 18px;
 }
 
 #rightNavbar{
@@ -130,11 +154,11 @@ p{
 
 #body{
     display: flex;
-    height: 92vh;
     border-bottom: 2px solid #2b2b2b;
 }
 #functions{
-    width: 3vw;
+    width: 60px;
+    min-width: 60px;
     background-color: #181818;
     border-right: 2px solid #2b2b2b;
 
@@ -147,6 +171,7 @@ p{
 
 #sources{
     width: 15vw;
+    min-width: 175px;
     background-color: #181818;
     
     border-right: 2px solid #2b2b2b;
@@ -222,7 +247,6 @@ p{
     height: 4vh;
     background-color: #181818;
     color: #fff;
-    display: flex;
 }
 #remoteWindowButton{
     height: 100%;

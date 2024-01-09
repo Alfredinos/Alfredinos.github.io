@@ -3,19 +3,36 @@
     position: absolute;
     opacity: 0;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 20%;
+    transform: translate(-50%, -300);
     width: 60%;
     height: fit-content;
-    grid-template-columns: 1fr, 1fr;
-    grid-template-rows: 1fr, 1fr;
-    grid-template-areas: 
-    "blackjack roulette"
-    "bitcoinExchange css_lekeplass"
-    ;
+    
     color: #ccc;
     transition: opacity 1000ms;
     gap: 30px;
+}
+@media (orientation: landscape) {
+    #projectsPage{
+        grid-template-columns: 1fr, 1fr;
+        grid-template-rows: 1fr, 1fr;
+        grid-template-areas: 
+        "blackjack roulette"
+        "bitcoinExchange css_lekeplass"
+        ;
+    }
+}
+@media (orientation: portrait) {
+    #projectsPage{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        "blackjack"
+        "roulette"
+        "bitcoinExchange"
+        "css_lekeplass"
+        ;
+    }
 }
 #blackjackProject{
     grid-area: blackjack;

@@ -4,7 +4,6 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 let myNameEl = document.querySelector("#myName");
 let myNameh1Els = document.querySelectorAll("#myName>h1");
-let myPortofolioButton = document.querySelector("#myPortofolioButton");
 let portofolioPage = document.querySelector("#portofolioPage");
 let myPortofolioFile = document.querySelector("#myPortofolioFile");
 let sourcesEl = document.querySelector("#sources");
@@ -16,6 +15,8 @@ let projectsPageEl = document.querySelector("#projectsPage");
 
 let folderEls = document.querySelectorAll(".folder");
 let subFolderEls = document.querySelectorAll(".subFolder");
+
+let title = document.querySelector("title");
 
 folderToggle = []
 subFolderToggle = []
@@ -65,7 +66,7 @@ for (let i = 0; i<subFolderEls.length; i++){
 
 
 
-myPortofolioButton.addEventListener("click", () => {
+myPortofolioFile.addEventListener("click", () => {
     togglePage("my_portofolio.md");
 });
 cvFileEl.addEventListener("click", ()=>{
@@ -85,6 +86,7 @@ pageOpen = {
 function togglePage(page){
     toggleOffAllPages()
     if(page == "my_portofolio.md" && !pageOpen.portofolio){
+        title.innerText = page;
         portofolioPage.style.transform = "translate(-50%,0)";
         portofolioPage.style.opacity = "1";
         makeMyName()
@@ -92,13 +94,15 @@ function togglePage(page){
         myPortofolioFile.style.backgroundColor = "#444";
     }
     if(page == "cv.pdf" && !pageOpen.cv){
+        title.innerText = page;
         cvPageEl.style.transform = "translate(-50%, -50%)";
         cvPageEl.style.opacity = "1";
         pageOpen.cv = true;
         cvFileEl.style.backgroundColor = "#444";
     }
     if(page == "projects.html" && !pageOpen.projects){
-        projectsPageEl.style.transform = "translate(-50%,-50%)";
+        title.innerText = page;
+        projectsPageEl.style.transform = "translate(-50%,0)";
         projectsPageEl.style.opacity = "1";
         pageOpen.projects = true;
         projectsFileEl.style.backgroundColor = "#444";

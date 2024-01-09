@@ -1,3 +1,24 @@
+
+@media (orientation: landscape) {
+    #languages>div:nth-child(2){
+        display: flex;
+    }
+    #languages>div:nth-child(2) img{
+        position: relative;
+        top: 100%;
+        transform: translateY(-100%);
+    }
+}
+
+@media (orientation: portrait) {
+    #languages>div:nth-child(2){
+        display: block;
+    }
+    #languages>div:nth-child(2) img{
+        position: static;
+    }
+}
+
 /* PORTOFOLIO PAGE */
 #portofolioPage{
     position: absolute;
@@ -49,15 +70,9 @@
 }
 #vikenLogo{
     height: 150px;
-    position: relative;
-    top: 100%;
-    transform: translateY(-100%);
     border: 1px solid #555;
     padding: 20px;
     border-radius: 20px;
-}
-#languages>div:nth-child(2){
-    display: flex !important;
 }
 
 #languages>div:nth-child(2) *{
