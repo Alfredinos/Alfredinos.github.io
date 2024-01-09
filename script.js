@@ -157,6 +157,9 @@ function toggleOffAllPages(){
     for (let i in pageOpen) {
         pageOpen[i] = false;
     }
+    if(mobileMode){
+        toggleSources()
+    }
 }
 
 async function startFunction(){
