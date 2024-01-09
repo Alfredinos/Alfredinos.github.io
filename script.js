@@ -22,8 +22,15 @@ let navbarMobileEl = document.querySelector("#navbarMobile img");
 let pageEl = document.querySelector("#pages");
 
 let mobileSourcesToggle = false;
+let mobileMode = false;
+
+if(window.innerHeight > window.innerWidth){
+    mobileMode = true;
+}
 
 navbarMobileEl.addEventListener("click", toggleSources);
+
+
 
 folderToggle = []
 subFolderToggle = []
@@ -129,9 +136,6 @@ function togglePage(page){
     for (let i = 0; i<searchEl.length; i++){
         searchEl[i].innerText = page;
     }
-    if(window.innerHeight > window.innerWidth){
-        toggleSources()
-    }
     sourcesEl.style.backgroundColor = "#181818";
 }
 
@@ -179,3 +183,19 @@ async function makeMyName(){
     }
 }
 
+
+async function checkOrientationChange(){
+    while (true){
+        await sleep(100)
+        temp = mobileMode;
+        if(window.innerHeight>window.innerWidth){
+            mobileMode = true;
+        } else {
+            mobileMode = false;
+        }
+        if (temp!=mobileMode && !mobileMode && mobileSourcesToggle){
+            toggleSources()
+        }
+    }
+}
+checkOrientationChange()

@@ -11,6 +11,13 @@
     #portofolioPage{
         width: 60%;
     }
+    #portofolioPage p{
+        font-size: 1.4em;
+    }
+    
+    #languages>div:nth-child(2) h2{
+        margin-top: 50px;
+    }
 }
 
 @media (orientation: portrait) {
@@ -32,6 +39,9 @@
     #vikenLogo{
         display: none;
     }
+    #portofolioPage p{
+        font-size: 1em;
+    }
 }
 
 /* PORTOFOLIO PAGE */
@@ -47,7 +57,6 @@
     margin: 0;
 }
 #portofolioPage p{
-    font-size: 1.4em;
     line-height: 1.7em;
 }
 #introduction {
@@ -92,6 +101,6 @@
 #languages>div:nth-child(2) *{
     margin-left: 1em;
 }
-#languages>div:nth-child(2) h2{
-    margin-top: 50px;
+#myGoals{
+    margin-bottom: 50vh;
 }
