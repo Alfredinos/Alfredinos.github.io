@@ -7,6 +7,7 @@
 body{
     margin: 0;
     overflow: hidden;
+    background-color: #1f1f1f;
 }
 p{
     margin: 0;
@@ -31,9 +32,13 @@ p{
     }
     #body{    
         height: 100vh;
+        width: 100vw;
     }
     #navbarMobile{
         display: none;
+    }
+    #pages{
+        width: 82vw;
     }
 }
 @media (orientation: portrait) {
@@ -48,6 +53,12 @@ p{
     }
     #body{    
         height: 100vh;
+        transform: translateX(-175px);
+        width: fit-content;
+        transition: transform 500ms;
+    }
+    #pages{
+        width: 100vw !important;
     }
     #navbarMobile{
         display: flex;
@@ -202,7 +213,6 @@ p{
 
 #body{
     display: flex;
-    width: 100vw;
     background-color: #222;
     border-bottom: 2px solid #2b2b2b;
 }
@@ -281,7 +291,6 @@ p{
 
 #pages{
     position: relative;
-    width: 82vw;
     background-color: #1f1f1f;
     overflow-y: scroll;
 }

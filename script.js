@@ -25,7 +25,7 @@ let title = document.querySelector("title");
 let navbarMobileEl = document.querySelector("#navbarMobile img");
 let pageEl = document.querySelector("#pages");
 
-let mobileSourcesToggle = false;
+let mobileSourcesToggle = true;
 let mobileMode = false;
 
 
@@ -137,13 +137,17 @@ hiddenElements.forEach((el)=>observer.observe(el));
 
 
 
-function toggleSources(){
+async function toggleSources(){
     
     if(!mobileSourcesToggle){
-        sourcesEl.style.display = "none";
+        bodyEl.style.transform = "translateX(-" + sourcesEl.getBoundingClientRect().width + "px)";
+        await sleep(500)
+        bodyEl.style.width = "fit-content"
         pageEl.style.width = "100vw";
     } else {
-        sourcesEl.style.display = "block";
+        bodyEl.style.transform = "translateX(0)";
+        await sleep(500)
+        bodyEl.style.width = ""
         pageEl.style.width = "82vw";
     }
     mobileSourcesToggle = !mobileSourcesToggle
@@ -250,3 +254,5 @@ async function checkOrientationChange(){
     }
 }
 checkOrientationChange()
+
+togglePage("intro.html")
