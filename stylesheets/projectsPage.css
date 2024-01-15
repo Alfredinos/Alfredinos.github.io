@@ -1,10 +1,8 @@
 #projectsPage{
     display: grid;
     position: absolute;
-    opacity: 0;
     left: 50%;
     top: 20%;
-    transform: translate(-50%, -300);
     height: fit-content;
     
     color: #ccc;

@@ -47,9 +47,7 @@
 /* PORTOFOLIO PAGE */
 #portofolioPage{
     position: absolute;
-    opacity: 0;
     left: 50%;
-    transform: translate(-50%,-300%);
     color: #ccc;
     transition: opacity 1000ms;
 }
@@ -130,7 +128,7 @@
     position: absolute;
     top: 80vh;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%,-100%);
     display: flex;
     flex-direction: column;
 }
@@ -139,7 +137,7 @@
     transition: all 1000ms;
 }
 ul{
-    font-size: 1.6em;
+    font-size: 15px;
     line-height: 3em;
 }
 li:nth-child(1){

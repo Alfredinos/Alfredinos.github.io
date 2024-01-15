@@ -19,7 +19,7 @@ p{
 @media (orientation: landscape) {
     #navbar{
         width: 100vw;
-        height: 4vh;
+        height: 40px;
         background-color: #181818;
         border-bottom: 2px solid #2b2b2b;
         display: flex;
@@ -30,7 +30,7 @@ p{
         display: flex;
     }
     #body{    
-        height: 92vh;
+        height: 100vh;
     }
     #navbarMobile{
         display: none;
@@ -139,7 +139,7 @@ p{
     text-align: center;
     margin: 0;
     color: #ccc;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 #rightNavbar{
@@ -294,7 +294,7 @@ p{
 /* FOOTER */
 
 #footer{
-    height: 4vh;
+    height: 40px;
     background-color: #181818;
     color: #fff;
 }
@@ -334,4 +334,16 @@ p{
 }
 #footerInfo div{
     display: flex;
+}
+
+
+
+
+.hidePage{
+    transform: translate(-5000vw, -50000vh);
+    opacity: 0 !important;
+}
+.showPage{
+    transform: translate(-50%,0);
+    opacity: 1 !important;
 }

@@ -1,12 +1,10 @@
 #cvPage{
-    opacity: 0;
     position: absolute;
     color: #ccc;
     width: 60%;
     height: fit-content;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%,-30000vh);
+    top: 30%;
     transition: opacity 1000ms;
 }
 #downloadCV{

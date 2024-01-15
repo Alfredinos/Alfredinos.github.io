@@ -2,6 +2,7 @@
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+let bodyEl = document.querySelector("#body");
 
 let myNameEl = document.querySelector(".myName");
 let myNameh1Els = document.querySelectorAll(".myName>h1");
@@ -26,6 +27,9 @@ let pageEl = document.querySelector("#pages");
 
 let mobileSourcesToggle = false;
 let mobileMode = false;
+
+
+
 
 
 introButtonTargets = [
@@ -148,30 +152,34 @@ function toggleSources(){
 function togglePage(page){
     toggleOffAllPages()
     if(page == "intro.html" && !pageOpen.intro){
-        introPageEl.style.transform = "";
-        introPageEl.style.opacity = "1";
+        introPageEl.classList.add("showPage");
+        introPageEl.classList.remove("hidePage");
+
         pageOpen.intro = true;
         introFile.style.backgroundColor = "#444";
     }
     if(page == "my_portofolio.md" && !pageOpen.portofolio){
+        portofolioPage.classList.add("showPage");
+        portofolioPage.classList.remove("hidePage")
+
         title.innerText = page;
-        portofolioPage.style.transform = "translate(-50%,0)";
-        portofolioPage.style.opacity = "1";
         makeMyName()
         pageOpen.portofolio = true;
         myPortofolioFile.style.backgroundColor = "#444";
     }
     if(page == "cv.pdf" && !pageOpen.cv){
+        cvPageEl.classList.add("showPage");
+        cvPageEl.classList.remove("hidePage")
+
         title.innerText = page;
-        cvPageEl.style.transform = "translate(-50%, -50%)";
-        cvPageEl.style.opacity = "1";
         pageOpen.cv = true;
         cvFileEl.style.backgroundColor = "#444";
     }
     if(page == "projects.html" && !pageOpen.projects){
+        projectsPageEl.classList.add("showPage");
+        projectsPageEl.classList.remove("hidePage")
+
         title.innerText = page;
-        projectsPageEl.style.transform = "translate(-50%,0)";
-        projectsPageEl.style.opacity = "1";
         pageOpen.projects = true;
         projectsFileEl.style.backgroundColor = "#444";
     }
@@ -182,15 +190,20 @@ function togglePage(page){
 }
 
 function toggleOffAllPages(){
-    introPageEl.style.transform = "translate(-5000%, -50000%)";
+    introPageEl.classList.add("hidePage");
+    introPageEl.classList.remove("showPage");
+
+    portofolioPage.classList.add("hidePage");
+    portofolioPage.classList.remove("showPage");
+
+    cvPageEl.classList.add("hidePage");
+    cvPageEl.classList.remove("showPage");
+
+    projectsPageEl.classList.add("hidePage");
+    projectsPageEl.classList.remove("showPage");
+
+
     introFile.style.backgroundColor = "";
-    introPageEl.style.opacity = "0";
-    portofolioPage.style.transform = "translate(-5000%,-30000vh)";
-    portofolioPage.style.opacity = "0";
-    cvPageEl.style.transform = "translate(-50%, -300vh)"
-    cvPageEl.style.opacity = "0";
-    projectsPageEl.style.transform = "translate(-5000%, -30000vh)";
-    projectsPageEl.style.opacity = "0";
     myPortofolioFile.style.backgroundColor = "";
     cvFile.style.backgroundColor = "";
     projectsFileEl.style.backgroundColor = "";
@@ -207,19 +220,6 @@ function toggleOffAllPages(){
     }
 }
 
-async function startFunction(){
-    while (true){
-        sourcesEl.style.backgroundColor = "#181818";
-        await sleep(2000);
-        for (let i in pageOpen)    
-            if(pageOpen[i]){
-                return 0;
-            }
-        sourcesEl.style.backgroundColor = "#222";
-        await sleep(2000)
-    }
-}
-
 
 async function makeMyName(){
     for (let i = 0; i<myNameh1Els.length; i++){
@@ -231,16 +231,19 @@ async function makeMyName(){
     }
 }
 
-
 async function checkOrientationChange(){
+    let bodyHeight = 0;
     while (true){
         await sleep(100)
         temp = mobileMode;
         if(window.innerHeight>window.innerWidth){
             mobileMode = true;
+            bodyHeight = window.innerHeight;
         } else {
             mobileMode = false;
+            bodyHeight = (window.innerHeight - 80);
         }
+        bodyEl.style.height = bodyHeight + "px";
         if (temp!=mobileMode && !mobileMode && mobileSourcesToggle){
             toggleSources()
         }
