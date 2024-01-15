@@ -6,7 +6,7 @@
     height: fit-content;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-300%);
+    transform: translate(-50%,-30000vh);
     transition: opacity 1000ms;
 }
 #downloadCV{

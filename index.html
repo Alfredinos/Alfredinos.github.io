@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="stylesheets/portofolioPage.css">
     <link rel="stylesheet" href="stylesheets/cvPage.css">
     <link rel="stylesheet" href="stylesheets/projectsPage.css">
+    <link rel="stylesheet" href="stylesheets/introPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <script defer src="arrow-down.js"></script>
 </head>
 
 <body>
@@ -31,7 +33,7 @@
             <img src="bilder/undo.png" alt="">
             <img src="bilder/not-undo.png" alt="">
             <div id="search">
-                <h1>Åpne en side</h1>
+                <h1>Åpne fil fra venstre</h1>
             </div>
         </div>
         <div id="rightNavbar">
@@ -42,15 +44,21 @@
                 <img src="bilder/split-two.png" alt="">
             </div>
             <div>
-                <img src="bilder/minimize.png" alt="">
-                <img src="bilder/maximize.png" alt="">
-                <img src="bilder/close.png" alt="">
+                <div id="minimize">
+                    <img src="bilder/minimize.png" alt="">
+                </div>
+                <div id="maximize">
+                    <img src="bilder/maximize.png" alt="">
+                </div>
+                <div id="close">
+                    <img src="bilder/close.png" alt="">
+                </div>
             </div>
         </div>
     </div>
     <div id="navbarMobile">
         <img src="bilder/mobileNavbar.png" alt="">
-        <h1 id="navbarMobileTitle">Åpne dokument</h1>
+        <h1 id="navbarMobileTitle">Åpne fil</h1>
     </div>
     <div id="body">
         <div id="functions"></div>
@@ -66,6 +74,9 @@
                     <div class="subFolder">
                         <img src="bilder/arrow-down.png" alt="">
                         <h4>PORTOFOLIO</h4>
+                    </div>
+                    <div class="folderFile" id="introFile">
+                        <h4>intro.html</h4>
                     </div>
                     <div class="folderFile" id="myPortofolioFile">
                         <h4>my_portofolio.md</h4>
@@ -91,9 +102,18 @@
             </div>
         </div>
         <div id="pages">
+            <div id="introPage">
+                <h1 id="introName">Alfred Varskog</h1>
+                <h2>Lillestrøm Videregående Skole</h2>
+                <div id="introButtons">
+                    <div class="introButton">my_portofolio.md<h2>Om meg</h2></div>
+                    <div class="introButton">cv.pdf<h2>CV</h2></div>
+                    <div class="introButton">projects.html<h2>Prosjekter</h2></div>
+                </div>
+            </div>
             <div id="portofolioPage">
                 <div id="introduction">
-                    <div id="myName">
+                    <div class="myName">
                         <h1>A</h1>
                         <h1>l</h1>
                         <h1>f</h1>
@@ -111,13 +131,18 @@
 
                     <h1>Videregående elev som er interessert i <br> realfag og IT</h1>
                 </div>
+                <div id="scrolldown">
+                    <img src="bilder/arrow-down.png" alt="">
+                    <img src="bilder/arrow-down.png" alt="">
+                    <img src="bilder/arrow-down.png" alt="">
+                </div>
                 <div id="portofolioContent">
-                    <div id="aboutMe">
+                    <div id="aboutMe" class="hidden">
                         <h1>Om Meg</h1>
                         <p>Hei, jeg er Alfred, en vennlig og dedikert elev ved Lillestrøm videregående skole. Med et
-                            <br>
+                            
                             positivt syn på både studier og livet, jobber jeg målrettet mot mine personlige og faglige
-                            <br>
+                            
                             mål. Jeg trives med å samarbeide og er alltid åpen for nye utfordringer.
                         </p>
                         <div id="languages">
@@ -136,12 +161,24 @@
                             </div>
                         </div>
                     </div>
-                    <div id="workExperience">
-                        <h1>Arbeidserfaring</h1>
-                    </div>
-                    <div id="myGoals">
+                    <div id="myGoals" class="hidden">
                         <h1>Mine Mål</h1>
                         <p></p>
+                        <ul>
+                            <li>Studere informatikk ved UiO med fokus på programmering og systemarkitektur.</li>
+                            <li>Utvikle solid teoretisk forståelse og praktiske ferdigheter innenfor disse områdene.</li>
+                            <li>Delta i prosjektarbeid for å få praktisk erfaring og samarbeide med industripartnere.</li>
+                            <li>Bidra til et dynamisk læringsmiljø ved å dele ideer og løsninger.</li>
+                            <li>Langsiktig mål: Bli en ressurs innen IT-bransjen, spesielt innen design og implementering av effektive systemer.</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="workExperience" class="hidden">
+                        <h1>Arbeidserfaring</h1>
+                        <p>Teknisk Assistent - Zpire 2022 - nå</p>
+                        <p>Videresalg av sko med merkevare 2022 - 2023</p>
+                        <h2>Frivillige verv</h2>
+                        <p>BarneCamp som gruppeleder - 2017 - 2022</p>
                     </div>
                 </div>
             </div>

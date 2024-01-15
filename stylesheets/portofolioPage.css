@@ -66,23 +66,21 @@
     font-weight: 300;
 }
 
-#myName {
+.myName {
     display: flex !important;
     color: #368BD3;
     font-size: 1.7em;
 }
-#myName h1{
+
+.myName h1{
     position: relative;
     opacity: 0;
     transition: opacity 500ms;
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 #portofolioContent h1{
     border-top: 2px solid #0078D4;
     padding-top: 30px;
-}
-#portofolioContent>div{
-    margin-top: 40vh;
 }
 #languages{
     display: flex !important;
@@ -101,6 +99,62 @@
 #languages>div:nth-child(2) *{
     margin-left: 1em;
 }
-#myGoals{
+#portofolioContent>div{
+    margin-top: 60vh;
+}
+#portofolioContent>div:last-child{
     margin-bottom: 50vh;
+}
+
+.hidden *{
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.show *{
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0);
+    
+    transition: all 1s;
+}
+
+
+#scrolldown img{
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+#scrolldown{
+    position: absolute;
+    top: 80vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+}
+#scrolldown img{
+    position: relative;
+    transition: all 1000ms;
+}
+ul{
+    font-size: 1.6em;
+    line-height: 3em;
+}
+li:nth-child(1){
+    transition-delay: 200ms;
+}
+
+li:nth-child(2){
+    transition-delay: 400ms;
+}
+li:nth-child(3){
+    transition-delay: 600ms;
+}
+li:nth-child(4){
+    transition-delay: 800ms;
+}
+li:nth-child(5){
+    transition-delay: 1000ms;
 }

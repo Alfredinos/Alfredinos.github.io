@@ -1,0 +1,44 @@
+#introPage{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 1;
+    color: #eee;
+    transition: opacity 500ms;
+}
+
+#introButtons{
+    display: flex;
+}
+.introButton h2{
+    margin: 0;
+}
+.introButton{
+    background-color: #333;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #444;
+    margin-left: 30px;
+    text-align: center;
+}
+.introButton:first-of-type{
+    margin-left: 0;
+}
+.introButton:hover{
+    background-color: #444;
+}
+
+@media (orientation: landscape){
+    #introPage{
+        display: block;
+    }
+}
+@media (orientation: portrait) {
+    #introPage{
+        display: none;
+    }
+}
+#introName{
+    font-size: 4em;
+}

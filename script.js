@@ -2,8 +2,9 @@
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-let myNameEl = document.querySelector("#myName");
-let myNameh1Els = document.querySelectorAll("#myName>h1");
+
+let myNameEl = document.querySelector(".myName");
+let myNameh1Els = document.querySelectorAll(".myName>h1");
 let portofolioPage = document.querySelector("#portofolioPage");
 let myPortofolioFile = document.querySelector("#myPortofolioFile");
 let sourcesEl = document.querySelector("#sources");
@@ -12,6 +13,8 @@ let cvPageEl = document.querySelector("#cvPage");
 let cvFileEl = document.querySelector("#cvFile");
 let projectsFileEl = document.querySelector("#projectsFile");
 let projectsPageEl = document.querySelector("#projectsPage");
+let introPageEl = document.querySelector("#introPage");
+let introFile = document.querySelector("#introFile");
 
 let folderEls = document.querySelectorAll(".folder");
 let subFolderEls = document.querySelectorAll(".subFolder");
@@ -24,9 +27,41 @@ let pageEl = document.querySelector("#pages");
 let mobileSourcesToggle = false;
 let mobileMode = false;
 
+
+introButtonTargets = [
+    "my_portofolio.md",
+    "cv.pdf",
+    "projects.html"
+]
+
+let introButtons = document.querySelectorAll("#introButtons>div");
+
+introButtons.forEach((el, i)=>{
+    el.addEventListener("click", ()=>{
+        togglePage(introButtonTargets[i]);
+    })
+})
+
+
+
+
+introFile.addEventListener("click", ()=>{togglePage("intro.html")});
+myPortofolioFile.addEventListener("click", () => {togglePage("my_portofolio.md")});
+cvFileEl.addEventListener("click", ()=>{togglePage("cv.pdf")});
+projectsFileEl.addEventListener("click", ()=>{togglePage("projects.html")});
+
+
+
 if(window.innerHeight > window.innerWidth){
     mobileMode = true;
 }
+pageOpen = {
+    "intro": true,
+    "portofolio": false,
+    "cv": false,
+    "projects": false,
+}
+
 
 navbarMobileEl.addEventListener("click", toggleSources);
 
@@ -79,22 +114,23 @@ for (let i = 0; i<subFolderEls.length; i++){
 }
 
 
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry) => {
+        console.log(entry.isIntersecting)
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+            entry.target.classList.remove('hidden');
+        } else{
+            entry.target.classList.remove('show');
+            entry.target.classList.add('hidden');
+        }
+    })
+})
 
-myPortofolioFile.addEventListener("click", () => {
-    togglePage("my_portofolio.md");
-});
-cvFileEl.addEventListener("click", ()=>{
-    togglePage("cv.pdf");
-});
-projectsFileEl.addEventListener("click", ()=>{
-    togglePage("projects.html")
-});
+let hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el)=>observer.observe(el));
 
-pageOpen = {
-    "portofolio": false,
-    "cv": false,
-    "projects": false,
-}
+
 
 
 function toggleSources(){
@@ -111,6 +147,12 @@ function toggleSources(){
 
 function togglePage(page){
     toggleOffAllPages()
+    if(page == "intro.html" && !pageOpen.intro){
+        introPageEl.style.transform = "";
+        introPageEl.style.opacity = "1";
+        pageOpen.intro = true;
+        introFile.style.backgroundColor = "#444";
+    }
     if(page == "my_portofolio.md" && !pageOpen.portofolio){
         title.innerText = page;
         portofolioPage.style.transform = "translate(-50%,0)";
@@ -140,6 +182,9 @@ function togglePage(page){
 }
 
 function toggleOffAllPages(){
+    introPageEl.style.transform = "translate(-5000%, -50000%)";
+    introFile.style.backgroundColor = "";
+    introPageEl.style.opacity = "0";
     portofolioPage.style.transform = "translate(-5000%,-30000vh)";
     portofolioPage.style.opacity = "0";
     cvPageEl.style.transform = "translate(-50%, -300vh)"
