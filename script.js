@@ -32,27 +32,51 @@ let mobileMode = false;
 
 
 
-introButtonTargets = [
+pageTargets = [
+    "intro.html",
     "my_portofolio.md",
     "cv.pdf",
     "projects.html"
 ]
 
+
 let introButtons = document.querySelectorAll("#introButtons>div");
 
 introButtons.forEach((el, i)=>{
     el.addEventListener("click", ()=>{
-        togglePage(introButtonTargets[i]);
+        togglePage(pageTargets[i+1]);
     })
 })
 
 
 
 
-introFile.addEventListener("click", ()=>{togglePage("intro.html")});
-myPortofolioFile.addEventListener("click", () => {togglePage("my_portofolio.md")});
-cvFileEl.addEventListener("click", ()=>{togglePage("cv.pdf")});
-projectsFileEl.addEventListener("click", ()=>{togglePage("projects.html")});
+
+introFile.addEventListener("click", ()=>{
+    togglePage("intro.html")
+    if(mobileMode){
+        toggleSources()
+    }
+});
+myPortofolioFile.addEventListener("click", ()=>{
+    togglePage("my_portofolio.md")
+    if(mobileMode){
+        toggleSources()
+    }
+});
+cvFileEl.addEventListener("click", ()=>{
+    togglePage("cv.pdf")
+    if(mobileMode){
+        toggleSources()
+    }
+});
+projectsFileEl.addEventListener("click", ()=>{
+    togglePage("projects.html")
+    if(mobileMode){
+        toggleSources()
+    }
+});
+
 
 
 
@@ -209,7 +233,7 @@ function toggleOffAllPages(){
 
     introFile.style.backgroundColor = "";
     myPortofolioFile.style.backgroundColor = "";
-    cvFile.style.backgroundColor = "";
+    cvFileEl.style.backgroundColor = "";
     projectsFileEl.style.backgroundColor = "";
 
     for (let i = 0; i<myNameh1Els.length; i++){
@@ -218,9 +242,6 @@ function toggleOffAllPages(){
 
     for (let i in pageOpen) {
         pageOpen[i] = false;
-    }
-    if(mobileMode){
-        toggleSources()
     }
 }
 
