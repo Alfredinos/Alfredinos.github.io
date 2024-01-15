@@ -18,6 +18,10 @@
     #languages>div:nth-child(2) h2{
         margin-top: 50px;
     }
+    #scrolldown img{
+        width: 30px;
+        height: 30px;
+    }
 }
 
 @media (orientation: portrait) {
@@ -41,6 +45,11 @@
     }
     #portofolioPage p{
         font-size: 1em;
+    }
+    
+    #scrolldown img{
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -121,8 +130,6 @@
 
 #scrolldown img{
     position: relative;
-    width: 30px;
-    height: 30px;
 }
 #scrolldown{
     position: absolute;

@@ -1,6 +1,6 @@
 #introPage{
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%,-50%);
     opacity: 1;
@@ -30,15 +30,22 @@
 }
 
 @media (orientation: landscape){
-    #introPage{
-        display: block;
+    #introName{
+        font-size: 4em;
     }
 }
 @media (orientation: portrait) {
-    #introPage{
-        display: none;
+    #introPage h1{
+        font-size: 1.3em;
     }
-}
-#introName{
-    font-size: 4em;
+    #introPage h2{
+        font-size: 1em;
+    }
+    #introButtons{
+        flex-direction: column;
+    }
+    #introButtons div{
+        margin-left: 0;
+        margin-top: 20px;
+    }
 }
