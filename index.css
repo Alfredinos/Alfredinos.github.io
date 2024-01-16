@@ -40,6 +40,9 @@ p{
     #pages{
         width: 82vw;
     }
+    #functions{
+        display: flex;
+    }
 }
 @media (orientation: portrait) {
     #navbar{
@@ -217,13 +220,18 @@ p{
     border-bottom: 2px solid #2b2b2b;
 }
 #functions{
+    flex-direction: column;
     width: 60px;
     min-width: 60px;
     background-color: #181818;
     border-right: 2px solid #2b2b2b;
-
+    align-items: center;
 }
-
+#functions img{
+    width: 35px;
+    margin-top: 15px;
+    cursor: pointer;
+}
 
 
 /* SOURCES */
@@ -235,6 +243,13 @@ p{
     background-color: #181818;
     
     border-right: 2px solid #2b2b2b;
+}
+#sources h4 img{
+    margin: 0;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
 }
 #sourcesTitle{
     font-weight: 500;
@@ -274,7 +289,7 @@ p{
 .folderFile h4{
     margin-left: 30px !important;
     border-left: 1px solid #666;
-    padding-left: 23px;
+    padding-left: 5px
 }
 .folder>div>h4{
     padding-top: 5px;

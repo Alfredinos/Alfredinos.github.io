@@ -22,6 +22,10 @@
         width: 30px;
         height: 30px;
     }
+    ul{
+        font-size: 1.5em;
+        line-height: 2em;
+    }
 }
 
 @media (orientation: portrait) {
@@ -50,6 +54,11 @@
     #scrolldown img{
         width: 20px;
         height: 20px;
+    }
+    
+    ul{
+        font-size: 15px;
+        line-height: 3em;
     }
 }
 
@@ -142,10 +151,6 @@
 #scrolldown img{
     position: relative;
     transition: all 1000ms;
-}
-ul{
-    font-size: 15px;
-    line-height: 3em;
 }
 li:nth-child(1){
     transition-delay: 200ms;
