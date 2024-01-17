@@ -28,9 +28,13 @@ let pageEl = document.querySelector("#pages");
 let mobileSourcesToggle = true;
 let mobileMode = false;
 
+let undoEl = document.querySelectorAll(".undo");
+
+undoEl[0].addEventListener("click", ()=>togglePage(lastPage));
+undoEl[1].addEventListener("click", ()=>togglePage(lastPage));
 
 
-
+lastPage = "";
 
 pageTargets = [
     "intro.html",
@@ -162,7 +166,6 @@ hiddenElements.forEach((el)=>observer.observe(el));
 
 
 async function toggleSources(){
-    
     if(!mobileSourcesToggle){
         bodyEl.style.transform = "translateX(-" + sourcesEl.getBoundingClientRect().width + "px)";
         await sleep(500)
@@ -178,6 +181,8 @@ async function toggleSources(){
 }
 
 function togglePage(page){
+    lastPage = title.innerText;
+    console.log(lastPage)
     toggleOffAllPages()
     if(page == "intro.html" && !pageOpen.intro){
         introPageEl.classList.add("showPage");
@@ -190,7 +195,6 @@ function togglePage(page){
         portofolioPage.classList.add("showPage");
         portofolioPage.classList.remove("hidePage")
 
-        title.innerText = page;
         makeMyName()
         pageOpen.portofolio = true;
         myPortofolioFile.style.backgroundColor = "#444";
@@ -199,7 +203,6 @@ function togglePage(page){
         cvPageEl.classList.add("showPage");
         cvPageEl.classList.remove("hidePage")
 
-        title.innerText = page;
         pageOpen.cv = true;
         cvFileEl.style.backgroundColor = "#444";
     }
@@ -207,14 +210,14 @@ function togglePage(page){
         projectsPageEl.classList.add("showPage");
         projectsPageEl.classList.remove("hidePage")
 
-        title.innerText = page;
         pageOpen.projects = true;
         projectsFileEl.style.backgroundColor = "#444";
     }
     for (let i = 0; i<searchEl.length; i++){
         searchEl[i].innerText = page;
     }
-    sourcesEl.style.backgroundColor = "#181818";
+    navbarMobileEl
+    title.innerText = page;
 }
 
 function toggleOffAllPages(){
