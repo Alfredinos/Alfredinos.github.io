@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Price History</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="header">
+        <div class="content">
+            <div id="hleft">
+                <img src="bilder/investt2_gif.png" alt="">
+                <h1>Bitcoin Index</h1>
+            </div>
+            <div id="hright">
+                
+                <a href="index.html">Home</a>
+                <a href="trade/buy.html">Trade</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="gridContainer">
+
+        <div class="gridItem" id="i1">
+            <h1>Bitcoin - Analysis</h1>
+            <p>Bitcoin (BTC) is a decentralized digital currency, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries.</p>
+            
+        </div>
+        <div class="gridItem logoContainer" id="i2"><img src="bilder/bitcoinlogo.webp" alt="bitcoinlogo"></div>
+        <div class="gridItem" id="i3">
+            <h2>History - Log vs. Linear</h2>
+            <p>Bitcoin price history is best viewed on a logarithmic scale. This is because Bitcoin has experienced exponential growth over time, and a linear scale distorts this view. </p>
+            <ul>
+                <li>Log history is easier to read</li>
+                <li>Linear history shows exponential growth</li>
+            </ul>
+            <p>This shows a more consistent pattern of growth with occasional periods of consolidation and correction.</p>
+        </div>
+        <div class="gridItem graphContainer" id="i4">
+            <img class="graph" src="bilder/graph1.avif" alt="Graph">
+            <img class="rsi" src="bilder/rsi.png" alt="RSI">
+        </div>
+            <div class="gridItem" id="i5">
+            <h2>Last 10 days</h2>
+                <p>The table below shows the price of Bitcoin over the past 10 days. As you can see, the price has been relatively stable, with only minor fluctuations. This is a good sign for investors, as it suggests that the market is maturing and that Bitcoin is becoming more widely accepted.</p>
+            
+        </div>
+        <div class="gridItem" id="i6">
+            <table>
+                <thead>
+                    <tr><th colspan="7">Last 10 Days</th></tr>
+                    <tr>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th>Open</th>
+                        <th>High</th>
+                        <th>Low</th>
+                        <th>Vol.</th>
+                        <th>Change %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="negative">
+                        <td>09/21/2023</td>
+                        <td>26,619.2</td>
+                        <td>27,125.2</td>
+                        <td>27,155.6</td>
+                        <td>26,382.3</td>
+                        <td>54.38K</td>
+                        <td>-2.02%</td>
+                    </tr>
+                    <tr class="negative">
+                        <td>09/20/2023</td>
+                        <td>27,125.0	</td>
+                        <td>27,209.2	</td>
+                        <td>27,155.6</td>
+                        <td>26,382.3</td>
+                        <td>54.38K</td>
+                        <td>-0.31%</td>
+                    </tr>
+                    <tr class="positive">
+                        <td>09/19/2023</td>
+                        <td>27,209.2	</td>
+                        <td>26,759.0	</td>
+                        <td>27,155.6</td>
+                        <td>26,382.3</td>
+                        <td>54.38K</td>
+                        <td>+1.67%</td>
+                    </tr>
+                    <tr class="positive">
+                        <td>09/18/2023</td>
+                        <td>26,763.5</td>
+                        <td>26,530.3	</td>
+                        <td>27,155.6</td>
+                        <td>26,382.3</td>
+                        <td>54.38K</td>
+                        <td>+0.88%</td>
+                    </tr>
+                    <tr class="positive">
+                        <td>09/17/2023</td>
+                        <td>26,529.1	</td>
+                        <td>26,562.0	</td>
+                        <td>27,155.6</td>
+                        <td>26,382.3</td>
+                        <td>54.38K</td>
+                        <td>+1.15%</td>
+                    </tr>
+                    <tr class="positive">
+                        <td>09/16/2023</td>
+                        <td>26,562.0	</td>
+                        <td>26,599.9	</td>
+                        <td>27,155.6</td>
+                        <td>26,382.3</td>
+                        <td>54.38K</td>
+                        <td>+1.50%</td>
+                    </tr>
+                    <tr class="positive">
+                        <td>09/15/2023</td>
+                        <td>26,601.0</td>
+                        <td>26,523.3	</td>
+                        <td>27,155.6</td>
+                        <td>26,382.3</td>
+                        <td>54.38K</td>
+                        <td>+2.65%</td>
+                    </tr>
+                    <tr class="negative">
+                        <td>09/14/2023</td>
+                        <td>26,524.7	</td>
+                        <td>26,223.0</td>
+                        <td>27,155.6</td>
+                        <td>26,382.3</td>
+                        <td>54.38K</td>
+                        <td>-2.61%</td>
+                    </tr>
+                    <tr class="negative">
+                        <td>09/13/2023</td>
+                        <td>26,223.0	</td>
+                        <td>25,836.1	</td>
+                        <td>27,155.6</td>
+                        <td>26,382.3</td>
+                        <td>54.38K</td>
+                        <td>-0.24%</td>
+                    </tr>
+                    <tr class="negative">
+                        <td>09/12/2023</td>
+                        <td>25,834.5	</td>
+                        <td>25,834.5	</td>
+                        <td>25,166.4	</td>
+                        <td>26,382.3</td>
+                        <td>54.38K</td>
+                        <td >-0.03%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="gridItem" id="i7">
+            <h1>Summary - Signal: Buy (+23 points)</h2>
+                <p>Bitcoin is up 23 points today, which some analysts are seeing as a signal to buy. Bitcoin has been on a steady rise in recent weeks, and this latest uptick could be a sign that the market is about to break out.
+                    <br><br>
+                    There are a few reasons why analysts are bullish on Bitcoin right now. First, institutional adoption of Bitcoin is on the rise. More and more companies and investors are seeing Bitcoin as a legitimate asset class, and this is driving up demand.
+                    <br><br>
+                    Second, the supply of Bitcoin is limited. There will only ever be 21 million Bitcoin in existence, and this scarcity is also driving up demand.
+                    <br><br>
+                    Of course, there are also risks associated with investing in Bitcoin. The cryptocurrency market is volatile, and prices can fluctuate wildly. Additionally, Bitcoin is still a relatively new asset class, and there is some uncertainty about its long-term future.
+                    <br><br>
+                    Overall, the recent rise in Bitcoin's price is a positive sign for investors. However, it is important to remember that Bitcoin is a risky investment, and investors should carefully consider their risk tolerance before investing.</p>
+        </div>
+    </div>
+    
+
+    <div class="footer">
+        <div class="content">
+            <h1>About us</h1>
+            <div class="linksFooter">
+                <ul>
+                    <li>Lorem</li>
+                    <li>Ipsum.</li>
+                    <li>Dolor</li>
+                    <li>Sit</li>
+                    <li>Amet</li>
+                </ul>
+                <ul>
+                    <li>Lorem</li>
+                    <li>Ipsum.</li>
+                    <li>Dolor</li>
+                    <li>Sit</li>
+                    <li>Amet</li>
+                </ul>
+                <ul>
+                    <li>Lorem</li>
+                    <li>Ipsum.</li>
+                    <li>Dolor</li>
+                    <li>Sit</li>
+                    <li>Amet</li>
+                </ul>
+                <ul>
+                    <li>Lorem</li>
+                    <li>Ipsum.</li>
+                    <li>Dolor</li>
+                    <li>Sit</li>
+                    <li>Amet</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

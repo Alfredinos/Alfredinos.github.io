@@ -1,0 +1,170 @@
+
+@media (orientation: landscape) {
+    #languages>div:nth-child(2){
+        display: flex;
+    }
+    #languages>div:nth-child(2) img{
+        position: relative;
+        top: 100%;
+        transform: translateY(-100%);
+    }
+    #portofolioPage{
+        width: 60%;
+    }
+    #portofolioPage p{
+        font-size: 1.4em;
+    }
+    
+    #languages>div:nth-child(2) h2{
+        margin-top: 50px;
+    }
+    #scrolldown img{
+        width: 30px;
+        height: 30px;
+    }
+    ul{
+        font-size: 1.5em;
+        line-height: 2em;
+    }
+}
+
+@media (orientation: portrait) {
+    #languages>div:nth-child(2){
+        display: block;
+    }
+    #languages>div:nth-child(2) img{
+        position: static;
+    }
+    #portofolioPage{
+        width: 90%;
+    }
+    #myName h1{
+        font-size: xx-large;
+    }
+    h1{
+        font-size: 1.4em;
+    }
+    #vikenLogo{
+        display: none;
+    }
+    #portofolioPage p{
+        font-size: 1em;
+    }
+    
+    #scrolldown img{
+        width: 20px;
+        height: 20px;
+    }
+    
+    ul{
+        font-size: 15px;
+        line-height: 3em;
+    }
+}
+
+/* PORTOFOLIO PAGE */
+#portofolioPage{
+    position: absolute;
+    left: 50%;
+    color: #ccc;
+    transition: opacity 1000ms;
+}
+#introduction *{
+    margin: 0;
+}
+#portofolioPage p{
+    line-height: 1.7em;
+}
+#introduction {
+    margin: 30vh auto 40vh auto;
+}
+#introduction h1{
+    font-weight: 300;
+}
+
+.myName {
+    display: flex !important;
+    color: #368BD3;
+    font-size: 1.7em;
+}
+
+.myName h1{
+    position: relative;
+    opacity: 0;
+    transition: opacity 500ms;
+    font-weight: 700 !important;
+}
+#portofolioContent h1{
+    border-top: 2px solid #0078D4;
+    padding-top: 30px;
+}
+#languages{
+    display: flex !important;
+    margin-top: 60px;
+}
+#languages>div{
+    width: 50%;
+}
+#vikenLogo{
+    height: 150px;
+    border: 1px solid #555;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#languages>div:nth-child(2) *{
+    margin-left: 1em;
+}
+#portofolioContent>div{
+    margin-top: 50vh;
+}
+#portofolioContent>div:last-child{
+    margin-bottom: 50vh;
+}
+
+.hidden *{
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.show *{
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0);
+    
+    transition: all 1s;
+}
+
+
+#scrolldown img{
+    position: relative;
+}
+#scrolldown{
+    position: absolute;
+    top: 75vh;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    display: flex;
+    flex-direction: column;
+}
+#scrolldown img{
+    position: relative;
+    transition: all 1000ms;
+}
+li:nth-child(1){
+    transition-delay: 200ms;
+}
+
+li:nth-child(2){
+    transition-delay: 400ms;
+}
+li:nth-child(3){
+    transition-delay: 600ms;
+}
+li:nth-child(4){
+    transition-delay: 800ms;
+}
+li:nth-child(5){
+    transition-delay: 1000ms;
+}

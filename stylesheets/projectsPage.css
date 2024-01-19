@@ -1,0 +1,66 @@
+#projectsPage{
+    display: grid;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    height: fit-content;
+    
+    color: #ccc;
+    transition: opacity 1000ms;
+    gap: 30px;
+    padding-bottom: 30vh;
+}
+@media (orientation: landscape) {
+    #projectsPage{
+        grid-template-columns: 1fr, 1fr;
+        grid-template-rows: 1fr, 1fr;
+        grid-template-areas: 
+        "blackjack roulette"
+        "bitcoinExchange css_lekeplass"
+        ;
+        
+        width: 60%;
+    }
+}
+@media (orientation: portrait) {
+    #projectsPage{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        "blackjack"
+        "roulette"
+        "bitcoinExchange"
+        "css_lekeplass"
+        ;
+        width: 90%;
+    }
+
+}
+#blackjackProject{
+    grid-area: blackjack;
+}
+#rouletteProject{
+    grid-area: roulette;
+}
+#bitcoinExchangeProject{
+    grid-area: bitcoinExchange;
+}
+#css_lekeplassProject{
+    grid-area: css_lekeplass;
+}
+.projectTitle img{
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.projectTitle img:hover{
+    background-color: #333;
+}
+.projectTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

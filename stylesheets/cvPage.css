@@ -1,0 +1,29 @@
+#cvPage{
+    position: absolute;
+    color: #ccc;
+    width: 60%;
+    height: fit-content;
+    left: 50%;
+    top: 30%;
+    transition: opacity 1000ms;
+}
+#downloadCV{
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    width: fit-content;
+}
+#downloadCV h2{
+    margin: 0 0 0 10px;
+}
+#downloadCV img{
+    height: 30px;
+}
+#downloadCV:hover{
+    background-color: #333;
+}
+#cvPage a{
+    text-decoration: none;
+    color: #eee;
+}
