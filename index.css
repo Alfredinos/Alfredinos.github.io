@@ -78,6 +78,7 @@ p{
 
 #navbarMobile{
     height: 50px;
+    width: 100vw;
     background-color: #181818;
     border-bottom: 1px solid #363636;
     justify-content: space-between;
