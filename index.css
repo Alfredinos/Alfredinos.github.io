@@ -82,6 +82,8 @@ p{
     background-color: #181818;
     border-bottom: 1px solid #363636;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
 }
 #navbarMobile img{
     position: relative;
@@ -255,8 +257,11 @@ p{
     width: 15vw;
     min-width: 175px;
     background-color: #181818;
-    
     border-right: 2px solid #2b2b2b;
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 #sources h4 img{
     margin: 0;
