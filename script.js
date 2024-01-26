@@ -2,8 +2,11 @@
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-let bodyEl = document.querySelector("#body");
 
+
+// DEKLARERING AV VARIABLER
+// ELEMENTER
+let bodyEl = document.querySelector("#body");
 let myNameEl = document.querySelector(".myName");
 let myNameh1Els = document.querySelectorAll(".myName>h1");
 let portofolioPage = document.querySelector("#portofolioPage");
@@ -25,37 +28,44 @@ let title = document.querySelector("title");
 let navbarMobileEl = document.querySelector("#navbarMobile img");
 let pageEl = document.querySelector("#pages");
 
-let mobileSourcesToggle = true;
-let mobileMode = false;
-
 let undoEl = document.querySelectorAll(".undo");
 
-undoEl[0].addEventListener("click", ()=>togglePage(lastPage));
-undoEl[1].addEventListener("click", ()=>togglePage(lastPage));
+let introButtons = document.querySelectorAll("#introButtons>div");
 
 
-lastPage = "";
+// TOGGLEVARIABLER / Boolean
 
+let mobileSourcesToggle = true;
+let mobileMode = false;
+// SJEKKER OM JEG ER PÅ MOBIL ELLER IKKE
+if(window.innerHeight > window.innerWidth){
+    mobileMode = true;
+}
+
+
+// BACKEND LISTER SOM PASSER PÅ AT ALT ÅPNES OG LUKKES SOM DET SKAL
 pageTargets = [
     "intro.html",
     "my_portofolio.md",
     "cv.pdf",
     "projects.html"
-]
+];
+pageOpen = {
+    "intro": true,
+    "portofolio": false,
+    "cv": false,
+    "projects": false,
+};
+folderToggle = []
+subFolderToggle = []
 
 
-let introButtons = document.querySelectorAll("#introButtons>div");
-
+// EVENTLISTENERS FOR CLICK
 introButtons.forEach((el, i)=>{
     el.addEventListener("click", ()=>{
         togglePage(pageTargets[i+1]);
     })
 })
-
-
-
-
-
 introFile.addEventListener("click", ()=>{
     togglePage("intro.html")
     if(mobileMode){
@@ -80,27 +90,16 @@ projectsFileEl.addEventListener("click", ()=>{
         toggleSources()
     }
 });
-
-
-
-
-if(window.innerHeight > window.innerWidth){
-    mobileMode = true;
-}
-pageOpen = {
-    "intro": true,
-    "portofolio": false,
-    "cv": false,
-    "projects": false,
-}
-
-
+undoEl[0].addEventListener("click", ()=>togglePage("intro.html"));
+undoEl[1].addEventListener("click", ()=>togglePage("intro.html"));
 navbarMobileEl.addEventListener("click", toggleSources);
 
 
 
-folderToggle = []
-subFolderToggle = []
+
+
+
+// ÅPNE OG LUKKE MAPPER SOM LIGGER I SOURCES 
 
 for (let i = 0; i<folderEls.length; i++){
     folderToggle[i] = false;
@@ -117,6 +116,8 @@ for (let i = 0; i<folderEls.length; i++){
         }
     })
 }
+
+// ÅPNE OG LUKKE UNDERMAPPER SOM LIGGER I SOURCES
 
 for (let i = 0; i<subFolderEls.length; i++){
     subFolderToggle[i] = false;
@@ -141,14 +142,13 @@ for (let i = 0; i<subFolderEls.length; i++){
             subFolderEls[i].children[0].src = "bilder/arrow-down.png"
             subFolderToggle[i] = !subFolderToggle[i];
         }
-
     });
 }
 
+// LAGER EN FUNKSJON SOM OPPDATERER EVENTER OM ELEMENTER ER SYNLIGE ELLER IKKE 
 
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach((entry) => {
-        console.log(entry.isIntersecting)
         if(entry.isIntersecting){
             entry.target.classList.add('show');
             entry.target.classList.remove('hidden');
@@ -163,7 +163,7 @@ let hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el)=>observer.observe(el));
 
 
-
+// LAGD FOR MOBILVERSJON SOM ÅPNER OG LUKKER SOURCES
 
 async function toggleSources(){
     if(!mobileSourcesToggle){
@@ -180,9 +180,9 @@ async function toggleSources(){
     mobileSourcesToggle = !mobileSourcesToggle
 }
 
+// EN FUNKSJON SOM BRUKES HVER GANG JEG ÅPNER ELLER LUKKER EN SIDE
+
 function togglePage(page){
-    lastPage = title.innerText;
-    console.log(lastPage)
     toggleOffAllPages()
     if(page == "intro.html" && !pageOpen.intro){
         introPageEl.classList.add("showPage");
@@ -220,6 +220,8 @@ function togglePage(page){
     title.innerText = page;
 }
 
+// EN FUNKSJON SOM HJELPER MED Å LUKKE ALLE SIDENE. DETTE BRUKES FOR Å ÅPNE NYE SIDER.
+
 function toggleOffAllPages(){
     introPageEl.classList.add("hidePage");
     introPageEl.classList.remove("showPage");
@@ -248,6 +250,7 @@ function toggleOffAllPages(){
     }
 }
 
+// EN FUNKSJON SOM GJØR NAVNET MITT SYNLIG MED EN ANIMASJON PÅ PORTOFØLJE SIDEN
 
 async function makeMyName(){
     for (let i = 0; i<myNameh1Els.length; i++){
@@ -258,6 +261,8 @@ async function makeMyName(){
         myNameh1Els[i].style.opacity = "1";
     }
 }
+
+// EN FUNKSJON SOM BRUKES BARE FOR Å LØSE NOEN PROBLEMER NÅR MAN BYTTER RASKT MELLOM MOBIL OG DESKTOP VERSJON.
 
 async function checkOrientationChange(){
     let bodyHeight = 0;
@@ -277,6 +282,8 @@ async function checkOrientationChange(){
         }
     }
 }
-checkOrientationChange()
 
+// START FUNKSJONER
+
+checkOrientationChange()
 togglePage("intro.html")

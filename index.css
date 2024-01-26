@@ -1,3 +1,5 @@
+/* VIKTIG OMGJØRING AV DEFAULTS */
+
 *{
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
@@ -12,6 +14,9 @@ body{
 p{
     margin: 0;
 }
+
+/* Customize scrollbar */
+
 ::-webkit-scrollbar-thumb {
     background-color: #0078D4 !important;
     border-radius: 5px;
@@ -24,6 +29,7 @@ p{
     width: 10px;
 }
 
+/* forskjellene mellom mobil og pc */
 
 @media (orientation: landscape) {
     #navbar{
@@ -76,6 +82,8 @@ p{
     }
 }
 
+/* navbar på mobilversjon */
+
 #navbarMobile{
     height: 50px;
     width: 100vw;
@@ -111,6 +119,8 @@ p{
 #navbarMobile>div img {
     margin-right: 20px;
 }
+
+/* Desktop navbar */
 
 #logo{
     height: 20px;
@@ -220,15 +230,13 @@ p{
 }
 
 #close:hover{
-    cursor: pointer;
     background-color: red;
 }
 #minimize:hover, #maximize:hover{
-    cursor: pointer;
     background-color: #242424;
 }
 
-/* BODY */
+/* BODY/synlige sider som åpnes */
 
 #body{
     display: flex;
@@ -250,7 +258,7 @@ p{
 }
 
 
-/* SOURCES */
+/* SOURCES - filer som kan åpnes og lukkes */
 
 
 #sources{
@@ -314,6 +322,9 @@ p{
     padding-top: 5px;
     padding-bottom: 5px;
 }
+.folder>div{
+    transition: all 500ms;
+}
 .folder>div:hover{
     cursor: pointer;
     background-color: #333;
@@ -328,10 +339,6 @@ p{
     background-color: #1f1f1f;
     overflow-y: scroll;
 }
-
-
-
-
 
 
 /* FOOTER */
