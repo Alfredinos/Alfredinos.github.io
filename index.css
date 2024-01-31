@@ -41,6 +41,7 @@ p{
         justify-content: space-between;
         overflow: hidden;
     }
+    /* bruker display flex for å legge til displayfunksjon i tillegg til å gjøre elementene synlig */
     #footer{
         display: flex;
     }
@@ -59,6 +60,10 @@ p{
     }
 }
 @media (orientation: portrait) {
+    /* 
+        Bruker display none for å fjerne elementer som ikke trengs til mobilversjonen
+        Dette påvirker ikke funksjonalitet
+    */
     #navbar{
         display: none;
     }
@@ -332,7 +337,7 @@ p{
 
 
 
-/* PAGES */
+/* PAGES sider som skal åpnes og lukkes */
 
 #pages{
     position: relative;
@@ -388,7 +393,10 @@ p{
 
 
 
-
+/* 
+    for å fjerne og vise sider 
+    jeg har lagd alle sidene på en html side, fordi jeg synes det var lettere og mer elegant.
+*/
 .hidePage{
     transform: translate(-5000vw, -50000vh);
     opacity: 0 !important;

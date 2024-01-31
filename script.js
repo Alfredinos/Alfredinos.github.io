@@ -1,5 +1,5 @@
 
-
+// sleep funksjon som er referert til i readme.md-filen
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 
@@ -95,7 +95,7 @@ undoEl[1].addEventListener("click", ()=>togglePage("intro.html"));
 navbarMobileEl.addEventListener("click", toggleSources);
 
 
-
+// variabler og sånt gjør jeg ikke kommentarer på
 
 
 
@@ -103,14 +103,17 @@ navbarMobileEl.addEventListener("click", toggleSources);
 
 for (let i = 0; i<folderEls.length; i++){
     folderToggle[i] = false;
+    // legger til eventlisteners med en loop som gjør åpningen og lukking av mappene i sources
     folderEls[i].children[0].addEventListener("click", ()=>{
         if(!folderToggle[i]){
             folderEls[i].style.height = "1.7em";
             folderEls[i].style.overflow = "hidden";
+            // endrer source til folder elementet som gir effekten om at den er åpen eller lukket.
             folderEls[i].children[0].children[0].src = "bilder/arrow-right.png"
             folderToggle[i] = true;
         } else {
             folderEls[i].style.height = "fit-content";
+            // endrer source til folder elementet som gir effekten om at den er åpen eller lukket.
             folderEls[i].children[0].children[0].src = "bilder/arrow-down.png"
             folderToggle[i] = false;
         }
@@ -121,14 +124,17 @@ for (let i = 0; i<folderEls.length; i++){
 
 for (let i = 0; i<subFolderEls.length; i++){
     subFolderToggle[i] = false;
+    // legger til eventlisteners med en loop som gjør åpningen og lukking av mappene i sources
     subFolderEls[i].addEventListener("click", ()=>{
         if(!subFolderToggle[i]){
+            // tempLength er hvor mange elemter av subFolderFiles det finnes
             temp = subFolderEls[i].parentElement.querySelectorAll(".folderFile");
             tempLength = temp.length;
             console.log(tempLength)
             for (let j = 0; j<tempLength; j++){
                 temp[j].style.display = "none";
             }
+            // endrer source til folder elementet som gir effekten om at den er åpen eller lukket.
             subFolderEls[i].children[0].src = "bilder/arrow-right.png"
             subFolderToggle[i] = !subFolderToggle[i];
         } else {
@@ -138,7 +144,7 @@ for (let i = 0; i<subFolderEls.length; i++){
             for (let j = 0; j<tempLength; j++){
                 temp[j].style.display = "flex";
             }
-            
+            // endrer source til folder elementet som gir effekten om at den er åpen eller lukket.
             subFolderEls[i].children[0].src = "bilder/arrow-down.png"
             subFolderToggle[i] = !subFolderToggle[i];
         }
@@ -146,7 +152,7 @@ for (let i = 0; i<subFolderEls.length; i++){
 }
 
 // LAGER EN FUNKSJON SOM OPPDATERER EVENTER OM ELEMENTER ER SYNLIGE ELLER IKKE 
-
+// referert til i readme.md-filen
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach((entry) => {
         if(entry.isIntersecting){
@@ -167,6 +173,8 @@ hiddenElements.forEach((el)=>observer.observe(el));
 
 async function toggleSources(){
     if(!mobileSourcesToggle){
+        // istedenfor å gjøre dette i css var det mye lettere å hente 
+        // vidden til elementet i pixler i javascript og flytte det på den måten
         bodyEl.style.transform = "translateX(-" + sourcesEl.getBoundingClientRect().width + "px)";
         await sleep(500)
         bodyEl.style.width = "fit-content"
@@ -184,6 +192,8 @@ async function toggleSources(){
 
 function togglePage(page){
     toggleOffAllPages()
+    // bruker variablen page som puttes inn via eventlistenererne til å 
+    // vite hvilken side som åpnes og lukkes
     if(page == "intro.html" && !pageOpen.intro){
         introPageEl.classList.add("showPage");
         introPageEl.classList.remove("hidePage");
@@ -216,13 +226,13 @@ function togglePage(page){
     for (let i = 0; i<searchEl.length; i++){
         searchEl[i].innerText = page;
     }
-    navbarMobileEl
     title.innerText = page;
 }
 
 // EN FUNKSJON SOM HJELPER MED Å LUKKE ALLE SIDENE. DETTE BRUKES FOR Å ÅPNE NYE SIDER.
 
 function toggleOffAllPages(){
+    // Fjerner alle sider som første steg til åpne sider funksjonen
     introPageEl.classList.add("hidePage");
     introPageEl.classList.remove("showPage");
 
@@ -234,13 +244,16 @@ function toggleOffAllPages(){
 
     projectsPageEl.classList.add("hidePage");
     projectsPageEl.classList.remove("showPage");
-
+    // bruker klassen hide og showpage for å endre elementene i css
+    // dette lager en kobling mellom css og javascript for å style
 
     introFile.style.backgroundColor = "";
     myPortofolioFile.style.backgroundColor = "";
     cvFileEl.style.backgroundColor = "";
     projectsFileEl.style.backgroundColor = "";
 
+    // gjør navnet mitt usynlig igjen for å kunne starte animasjonen på nytt
+    // når man åpner siden med navnet på nytt
     for (let i = 0; i<myNameh1Els.length; i++){
         myNameh1Els[i].style.opacity = "0";
     }
@@ -262,28 +275,6 @@ async function makeMyName(){
     }
 }
 
-// EN FUNKSJON SOM BRUKES BARE FOR Å LØSE NOEN PROBLEMER NÅR MAN BYTTER RASKT MELLOM MOBIL OG DESKTOP VERSJON.
-
-async function checkOrientationChange(){
-    let bodyHeight = 0;
-    while (true){
-        await sleep(100)
-        temp = mobileMode;
-        if(window.innerHeight>window.innerWidth){
-            mobileMode = true;
-            bodyHeight = window.innerHeight;
-        } else {
-            mobileMode = false;
-            bodyHeight = (window.innerHeight - 80);
-        }
-        bodyEl.style.height = bodyHeight + "px";
-        if (temp!=mobileMode && !mobileMode && mobileSourcesToggle){
-            toggleSources()
-        }
-    }
-}
 
 // START FUNKSJONER
-
-checkOrientationChange()
-togglePage("intro.html")
+togglePage("intro.html");

@@ -1,4 +1,6 @@
 
+/* denne funksjonen kjøres fra starten for å gjøre animasjonen som viser pilene på portofoliopage */
+
 let scrollDownEl = document.querySelector("#scrolldown");
 
 
