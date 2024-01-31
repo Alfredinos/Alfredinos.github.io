@@ -12,6 +12,8 @@ ting jeg har hentet fra nettet til javascript:
 
 Css og html er lagd helt selv uten å hente eksakte løsninger fra nettet.
 
+jeg har lagt inn kommentarer for å hjelpe folk som vil bygge videre på nettsiden min
+
 nettsiden ligger på:
 alfredinos.github.io
 
